@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haikyuu!!</title>
+    <link rel="stylesheet" href="haikyuu-site/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Haikyuu!!</h1>
+        <nav>
+            <ul>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#episodios">Episódios Favoritos</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><button id="theme-toggle">🌙 Tema Escuro</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="banner">
+            <img src="./haikyuu-site/styles/haikyuu header_banner.jpeg" alt="Banner Haikyuu!!">
+            <p>Bem-vindo ao mundo de Haikyuu!!, onde a paixão pelo vôlei e a amizade se encontram!</p>
+        </section>
+
+        <section id="galeria">
+            <h2>Personagens Principais</h2>
+            <div class="personagem" onclick="openModal('hinata')">
+                <img src="./haikyuu-site/styles/⚡ShoyoHinata.jpeg" alt="Shoyo Hinata">
+                <h3>Shoyo Hinata</h3>
+                <p>Um jogador determinado e cheio de energia.</p>
+            </div>
+            <div class="personagem" onclick="openModal('kageyama')">
+                <img src="./haikyuu-site/styles/download.jpeg" alt="Tobio Kageyama">
+                <h3>Tobio Kageyama</h3>
+                <p>Um levantador talentoso e competitivo.</p>
+            </div>
+            <div class="personagem" onclick="openModal('tsukishima')">
+                <img src="./haikyuu-site/styles/download (1).jpeg" alt="Kei Tsukishima">
+                <h3>Kei Tsukishima</h3>
+                <p>Um jogador inteligente com uma visão crítica do jogo.</p>
+            </div>
+            <!-- Novo personagem adicionado -->
+            <div class="personagem" onclick="openModal('oikawa')">
+                <img src="./haikyuu-site/styles/Oikawa Tooru.jpeg" alt="Toru Oikawa">
+                <h3>Toru Oikawa</h3>
+                <p>O capitão carismático e brilhante levantador.</p>
+            </div>
+        </section>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="nome-personagem"></h2>
+                <img id="imagem-personagem" src="" alt="Imagem do personagem">
+                <p id="descricao-personagem"></p>
+                <button onclick="closeModal()">Voltar à Galeria</button>
+            </div>
+        </div>
+
+        <section id="episodios">
+            <h2>Episódios Favoritos</h2>
+            <div class="episodio">
+                <h3>Título: Maestros</h3>
+                <p>Número: 19</p>
+                <img src="./haikyuu-site/styles/Focused Oikawa.jpeg" alt="Episódio 1">
+                <p>Descrição: A história de como Hinata começou sua jornada no vôlei.</p>
+                <button onclick="openTrailer('trailer1')">Assistir ao episodeo</button>
+            </div>
+            <!-- Adicionando novos episódios -->
+            <div class="episodio">
+                <h3>Título: Os idiotas do volei</h3>
+                <p>Número: 9</p>
+                <img src="./haikyuu-site/styles/download (2).jpeg" alt="Episódio 2">
+                <p>Descrição:Tsukishima volta ao jogo, que acabou virando uma verdadeira batalha.</p>
+                <button onclick="openTrailer('trailer2')">Assistir ao episodeo</button>
+            </div>
+            <div class="episodio">
+                <h3>Título: acima</h3>
+                <p>Número: 11</p>
+                <img src="./haikyuu-site/styles/the best broship.jpeg" alt="Episódio 3">
+                <p>Descrição: A equipe se prepara para mostrar suas novas habilidades no torneio de primavera.</p>
+                <button onclick="openTrailer('trailer3')">Assistir ao episodeo</button>
+            </div>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <form id="contact-form" onsubmit="return validateForm()">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="message">Mensagem:</label>
+                <textarea id="message" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="success-message" style="display:none;">Mensagem enviada com sucesso!</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
